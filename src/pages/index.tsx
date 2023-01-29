@@ -1,6 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import TaskCard from '@/components/TaskCard/TaskCard';
+import floors from '@/mocks/floors';
+
 const Index: NextPage = () => {
   return (
     <>
@@ -14,34 +17,10 @@ const Index: NextPage = () => {
 
         {/* Main Wrapper Container */}
         <main className={'container relative max-w-7xl px-4'}>
-          {/* Featured Section */}
-          <div className="flex h-screen flex-col-reverse items-center pb-[10vh]">
-            {/* Featured Text Container */}
-            <div className="container relative z-20 space-y-4">
-              {/* Title */}
-              <h1 className="font-sans text-5xl font-bold leading-none text-white">
-                Sereno Software
-              </h1>
-              {/* Subtitle */}
-              <h1 className="pb-2 font-sans text-4xl leading-none text-slate-300">
-                From Design To CI
-              </h1>
-            </div>
-          </div>
-
-          {/* Featured Section */}
-          <div className="flex h-screen flex-col-reverse items-center pb-[10vh]">
-            {/* Featured Text Container */}
-            <div className="container relative z-20 space-y-4">
-              {/* Title */}
-              <h1 className="font-sans text-5xl font-bold leading-none text-white">
-                Liftboy
-              </h1>
-              {/* Subtitle */}
-              <h1 className="pb-2 font-sans text-4xl leading-none text-slate-300">
-                Sin asensor otra vez
-              </h1>
-            </div>
+          <div className="flex min-h-screen flex-col items-center justify-center space-y-1">
+            {floors.map((f, i) => {
+              return <TaskCard key={i} msg={`Piso ${f.name}`} />;
+            })}
           </div>
         </main>
       </div>
