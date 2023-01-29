@@ -1,0 +1,34 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base{
+  :root {
+    --color-primary: 255 115 179;
+    --color-secondary: 111 114 185;
+    --color-gdark: 28, 22, 35;
+    --color-glight: 58, 65, 130;
+  }
+}
+
+
+@layer components {
+}
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
