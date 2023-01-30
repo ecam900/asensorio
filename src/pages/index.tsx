@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import NewTaskModal from '@/components/NewTaskModal/NewTaskModal';
 import TaskCard from '@/components/TaskCard/TaskCard';
-import floors from '@/mocks/floors';
 
 const Index: NextPage = () => {
   return (
@@ -17,10 +17,16 @@ const Index: NextPage = () => {
 
         {/* Main Wrapper Container */}
         <main className={'container relative max-w-7xl px-4'}>
-          <div className="flex min-h-screen flex-col items-center justify-center space-y-1">
-            {floors.map((f, i) => {
-              return <TaskCard key={i} msg={`Piso ${f.name}`} />;
-            })}
+          <div className="flex min-h-screen flex-col items-center justify-center space-y-2">
+            <h2 className="container max-w-sm text-left font-sans text-5xl font-bold text-zinc-100">
+              Pedidos:
+            </h2>
+            <div className="container h-[66vh] max-w-sm space-y-2 overflow-y-auto px-4 scrollbar-thin scrollbar-thumb-blue-800">
+              <TaskCard msg={`Piso 1`} />
+              <TaskCard msg={`Piso 4`} />
+              <TaskCard msg={`Piso 19`} />
+            </div>
+            <NewTaskModal />
           </div>
         </main>
       </div>
